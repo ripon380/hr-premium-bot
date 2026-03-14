@@ -60,10 +60,22 @@ async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     if not existing:
         users_col.insert_one({"_id": uid, "balance": 0, "orders": [], "name": user.first_name})
     welcome_text = (
-        "*Welcome to HR Premium Store!*\n\n"
-        "Hello *" + user.first_name + "* !\n\n"
-        "Buy products, add balance, check orders.\n\n"
-        "Choose from the menu below:"
+        "*╔══════════════════════╗*\n"
+        "*    HR Premium Store   *\n"
+        "*╚══════════════════════╝*\n\n"
+        "আসসালামু আলাইকুম *" + user.first_name + "* ভাই! 👋\n\n"
+        "আপনাকে স্বাগতম আমাদের *HR Premium Store* এ!\n\n"
+        "━━━━━━━━━━━━━━━━━━━━\n"
+        "এখানে আপনি পাবেন:\n"
+        "🌐 সেরা দামে *VPN* সার্ভিস\n"
+        "🎵 *Music* Premium একাউন্ট\n"
+        "🎬 *Video Streaming* সার্ভিস\n"
+        "☁️ *Cloud Storage* সুবিধা\n"
+        "━━━━━━━━━━━━━━━━━━━━\n\n"
+        "💰 *সাশ্রয়ী মূল্যে* সেরা সার্ভিস!\n"
+        "⚡ *দ্রুত ডেলিভারি* নিশ্চিত!\n"
+        "✅ *বিশ্বস্ত সেবা* সবসময়!\n\n"
+        "👇 নিচের মেনু থেকে শুরু করুন:"
     )
     await update.message.reply_text(welcome_text, parse_mode="Markdown", reply_markup=main_menu_keyboard())
 
